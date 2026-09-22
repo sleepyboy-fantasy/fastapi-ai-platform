@@ -1,0 +1,432 @@
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+
+    --text: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+
+    --bg: #f5f7fa;
+    --surface: #ffffff;
+
+    --border: #e5e7eb;
+    --border-light: #f0f0f0;
+
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+
+    --shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.04);
+
+    --radius: 8px;
+
+    --font:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Microsoft YaHei",
+        "PingFang SC",
+        Arial,
+        sans-serif;
+
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+
+    color: var(--text);
+    background: var(--bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-width: 320px;
+    min-height: 100vh;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: var(--font);
+}
+
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 14px;
+}
+
+
+button {
+    border: 0;
+    border-radius: var(--radius);
+
+    padding: 9px 16px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.05s ease;
+}
+
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+input,
+select,
+textarea {
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 9px 12px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-light);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+
+    color: var(--text);
+
+    font-family: var(--font);
+
+    font-weight: 600;
+}
+
+
+h1 {
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+
+h2 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+
+h3 {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    color: var(--text-secondary);
+}
+
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+hr {
+    margin: 24px 0;
+
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--surface);
+}
+
+
+th,
+td {
+    padding: 12px 14px;
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+
+th {
+    background: #f9fafb;
+
+    color: var(--text-secondary);
+
+    font-weight: 600;
+}
+
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* 页面通用布局 */
+
+header {
+    width: 100%;
+
+    min-height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+header h1 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+main {
+    width: min(1100px, calc(100% - 48px));
+
+    margin: 32px auto;
+
+    padding: 28px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* 页面中的普通区块 */
+
+main > div {
+    margin-bottom: 20px;
+}
+
+
+/* 小屏幕适配 */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 16px;
+    }
+
+
+    header h1 {
+        font-size: 20px;
+    }
+
+
+    main {
+        width: calc(100% - 24px);
+
+        margin: 16px auto;
+
+        padding: 20px;
+
+        border-radius: 8px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+    h2 {
+        font-size: 20px;
+    }
+
+
+    table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    header {
+        min-height: 56px;
+    }
+
+
+    main {
+        padding: 16px;
+    }
+
+
+    button {
+        padding: 8px 12px;
+    }
+
+}
+
+/* 登录 / 注册页面 */
+
+#root.auth-layout {
+    min-height: 100vh;
+}
+
+.auth-page {
+    width: 420px;
+    max-width: calc(100% - 32px);
+    margin: auto;
+    padding: 40px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-page h1 {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.auth-page h2 {
+    margin-bottom: 28px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--text-secondary);
+}
+
+.auth-page input {
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.auth-page > button {
+    width: 100%;
+}
+
+.auth-page p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.auth-page p button {
+    margin-left: 6px;
+    padding: 0;
+    background: none;
+    color: var(--primary);
+}
+
+.auth-page p button:hover {
+    background: none;
+    text-decoration: underline;
+}

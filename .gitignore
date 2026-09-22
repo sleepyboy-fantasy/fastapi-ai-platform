@@ -1,27 +1,73 @@
+# =========================
 # Python
+# =========================
+
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyd
 
-# Virtual environment
 venv/
 .venv/
 
-# Environment variables
+
+# =========================
+# Environment
+# =========================
+
 .env
 .env.*
 
+
+# =========================
+# Database
+# =========================
+
+*.sqlite3
+*.db
+
+
+# =========================
+# Upload files
+# =========================
+
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+
+# =========================
+# AI model files
+# =========================
+
+backend/models/
+
+
+# =========================
+# Frontend
+# =========================
+
+frontend/node_modules/
+frontend/dist/
+
+
+# =========================
 # IDE
+# =========================
+
 .vscode/
 .idea/
 
+
+# =========================
 # OS
+# =========================
+
 .DS_Store
 Thumbs.db
 
-# Testing and cache
-.pytest_cache/
-.mypy_cache/
 
+# =========================
 # Logs
+# =========================
+
 *.log

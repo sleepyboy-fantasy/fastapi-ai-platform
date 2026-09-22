@@ -1,21 +1,17 @@
-import os
-
 from dotenv import load_dotenv
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import declarative_base
+
+import os
 
 
 load_dotenv()
 
 
-DATABASE_URL = (
-    f"postgresql://"
-    f"{os.getenv('POSTGRES_USER')}:"
-    f"{os.getenv('POSTGRES_PASSWORD')}@"
-    f"{os.getenv('POSTGRES_HOST')}:"
-    f"{os.getenv('POSTGRES_PORT')}/"
-    f"{os.getenv('POSTGRES_DB')}"
+DATABASE_URL = os.getenv(
+    "DATABASE_URL"
 )
 
 
